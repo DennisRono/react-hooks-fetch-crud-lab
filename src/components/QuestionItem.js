@@ -9,10 +9,11 @@ function QuestionItem({ question, deleteQuestion, updateQuestion }) {
     </option>
   ))
 
-  function handleDelete() {
-    fetch(`http://localhost:4000/questions/${id}`, {
+  async function handleDelete() {
+    await fetch(`http://localhost:4000/questions/${id}`, {
       method: 'DELETE',
     })
+
     deleteQuestion(id)
   }
 
